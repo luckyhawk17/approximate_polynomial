@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159543476-1"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-159543476-1');
+        </script>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width,initial^scale=1">
+        <title>多項式近似サイト|ウェブ上で手軽に未来を予測</title>
+        <meta name="description" content="多項式近似は株価の変動や顧客の増減などさまざまな現象の予測で使われている手法です。このサイトではエクセルに入力したデータからブラウザ上で簡単に多項式の近似式と近似曲線を導き、未来予想の参考にできます。">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.14.3/xlsx.full.min.js" type="text/javascript"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" type="text/javascript"></script>
+        <link rel="shortcut icon" href="hawk_labo.jpg">
+        <link rel="stylesheet" href="css/approximate_polynomial.css">
+    </head>
+    <body>
+        <header>
+            <table style="height: 100%;">
+                <tr>
+                    <td style="text-align: left; font-size: 30px;font-weight: 100;">
+                        多項式近似
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: left;font-size: 15px;">
+                        多項式を使って将来の変動を予測する
+                    </td>
+                </tr>
+            </table>         
+        </header>
+        <div id="content" style="height: auto;">
+            <a href="index.html"><p style="font-size: 15px;">>ホーム</p></a>
+            <p style="font-size: 15px;font-weight: 100;">分析したいデータをエクセルに入力して、「ファイルの選択」ボタンを押してください</p>
+            <p style="font-size: 12px;">エクセルシートのA列がX軸、B列がY軸の数値になります(➡<a href="tutorial.html">詳しい使い方</a>)</p>
+            <br>
+            <form>
+                <input type="file" id="input">
+            </form>
+            <br>
+            <form>
+                <label style="font-size: smaller;" for="degree">次数:</label>
+                <br>
+                <input type="text" id="degree">
+            </form>
+            <button id="button2">次数を指定して分析</button>
+            <br><br>
+            <button id="button">最適次数で分析</button>
+            <br><br>
+            <div id="optimal_degree"></div>
+            <div id="equation"></div>
+            <div id="prediction"></div>
+            <canvas id="canvas"></canvas>
+            <br> 
+            <div style="text-align: center;">
+                2021 luckyhawk ⒸAll Rights Reserved.
+            </div>  
+        </div>             
+        <script src="script/approximate_polynomial.js"></script>
+    </body>
+</html>
